@@ -1,4 +1,4 @@
-package edu.learn.Creational.singleton.enum_emp;
+package edu.learn.Creational.singleton.enums;
 
 public class File {
     private final String name;

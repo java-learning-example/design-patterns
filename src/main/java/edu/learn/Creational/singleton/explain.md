@@ -14,7 +14,7 @@ In this example, all parts of the app share one browser session (tabs, homepage)
 
 - `Browser.java`: singleton implementation + shared browser state
 - `BrowserDemo.java`: runnable demo and thread test
-- `enum_emp/`: enum-based singleton variant
+- `enums/`: enum-based singleton variant
 
 ## How `Browser` is implemented
 
@@ -68,6 +68,6 @@ Use class-based singleton when you need one shared manager, e.g.:
 ## Class-based vs Enum singleton
 
 - Class-based singleton (this package): more flexible structure, explicit locking
-- Enum singleton (`enum_emp`): simpler and safer default in many cases (serialization/reflection resistant)
+- Enum singleton (`enums`): simpler and safer default in many cases (serialization/reflection resistant)
 
 Both guarantee single instance when implemented correctly.

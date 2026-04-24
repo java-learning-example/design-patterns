@@ -1,4 +1,4 @@
-## Enum Singleton (`enum_emp`)
+## Enum Singleton (`enums`)
 
 This package demonstrates **Singleton using `enum`**, which is the most robust singleton style in Java.
 

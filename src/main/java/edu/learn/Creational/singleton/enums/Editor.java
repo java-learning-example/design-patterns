@@ -1,4 +1,4 @@
-package edu.learn.Creational.singleton.enum_emp;
+package edu.learn.Creational.singleton.enums;
 
 import java.util.Collection;
 import java.util.Collections;
