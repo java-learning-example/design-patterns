@@ -1,23 +1,53 @@
 package edu.learn.Creational.singleton;
 
-// Singleton
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
+// Class-based Singleton with double-checked locking.
 public class Browser {
-    private static Browser browser;
+    private static volatile Browser instance;
 
-    private Browser(){}
+    private final List<String> openTabs = new ArrayList<>();
+    private String homePage = "https://www.example.com";
 
-    public synchronized static Browser getInstance(){
-        if(browser == null){
-            synchronized(Browser.class){
-                if(browser == null) browser = new Browser();
-            }
-        }
-    
-        return browser;
+    private Browser() {
     }
 
-    public void display(){
-        System.out.println("In singleton...");
+    public static Browser getInstance() {
+        if (instance == null) {
+            synchronized (Browser.class) {
+                if (instance == null) {
+                    instance = new Browser();
+                }
+            }
+        }
+        return instance;
+    }
+
+    public synchronized void setHomePage(String homePage) {
+        this.homePage = homePage;
+    }
+
+    public synchronized String getHomePage() {
+        return homePage;
+    }
+
+    public synchronized void openTab(String url) {
+        openTabs.add(url);
+        System.out.println(Thread.currentThread().getName() + " opened tab: " + url);
+    }
+
+    public synchronized void closeTab(String url) {
+        openTabs.remove(url);
+        System.out.println(Thread.currentThread().getName() + " closed tab: " + url);
+    }
+
+    public synchronized List<String> getOpenTabsSnapshot() {
+        return Collections.unmodifiableList(new ArrayList<>(openTabs));
+    }
+
+    public synchronized int getTabCount() {
+        return openTabs.size();
     }
 }
