@@ -54,13 +54,15 @@ local.properties
 .factorypath
 
 # VS Code
-.vscode/
 
 # --- Operating System Files ---
 .DS_Store
 Thumbs.db
 
 # --- Environment/Secret Files ---
-.env
 *.properties
 !src/main/resources/*.properties
+
+*.scripts
+config.bat
+node_modules
