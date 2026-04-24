@@ -1,32 +1,5 @@
 package edu.learn.Structural.composite;
 
-import java.util.ArrayList;
-import java.util.List;
-
-interface FileSystemNode {
-    int size();
-}
-
-class FileLeaf implements FileSystemNode {
-    private final int bytes;
-
-    public FileLeaf(int bytes) { this.bytes = bytes; }
-
-    public int size() { return bytes; }
-}
-
-class FolderComposite implements FileSystemNode {
-    private final List<FileSystemNode> children = new ArrayList<>();
-
-    public void add(FileSystemNode node) { children.add(node); }
-
-    public int size() {
-        int sum = 0;
-        for (FileSystemNode child : children) sum += child.size();
-        return sum;
-    }
-}
-
 public class CompositeDemo {
     public static void main(String[] args) {
         FolderComposite root = new FolderComposite();
