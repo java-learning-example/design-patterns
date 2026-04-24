@@ -1,4 +1,4 @@
-package java.learn.singleton;
+package java.learn.Creational.singleton;
 
 // Singleton
 

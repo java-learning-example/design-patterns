@@ -1,4 +1,4 @@
-package java.learn.factory;
+package java.learn.Creational.factory;
 
 public class FactoryMain {
     public static void main(String[] args) {
