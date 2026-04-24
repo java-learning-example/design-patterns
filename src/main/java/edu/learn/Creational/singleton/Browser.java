@@ -7,12 +7,9 @@ public class Browser {
 
     private Browser(){}
 
-    public synchronized static Browser getInstance()
-    {
-        if(browser == null)
-        {
-            synchronized(Browser.class)
-            {
+    public synchronized static Browser getInstance(){
+        if(browser == null){
+            synchronized(Browser.class){
                 if(browser == null) browser = new Browser();
             }
         }
@@ -20,8 +17,7 @@ public class Browser {
         return browser;
     }
 
-    public void display()
-    {
+    public void display(){
         System.out.println("In singleton...");
     }
 }
